@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2>User Form</h2>
+  </div>
+
+  <div class="col-lg-12">
+    <form [formGroup]="formgroup" (ngSubmit)="submit(formgroup.value)">
+
+      <div class="col-lg-12 formgroup">
+        <label>Name <span class="text-danger small" *ngIf="formgroup.controls.name.invalid && formgroup.controls.name.touched">Please Enter Name</span></label>
+        <input type="text" placeholder="Enter name" formControlName="name" class="form-control">
+      </div>
+
+      <div class="col-lg-12 formgroup">
+        <label>Age</label>
+        <input type="number" placeholder="Enter age" formControlName="age" class="form-control">
+      </div>
+
+      <div class="col-lg-12 formgroup">
+        <label>Number</label>
+        <input type="number" placeholder="Enter number" formControlName="number" class="form-control">
+      </div>
+
+      <div class="col-lg-12 formgroup">
+        <label>Email <span class="text-danger small" *ngIf="formgroup.controls.email.invalid && formgroup.controls.email.touched">Please Enter Valid Email</span></label>
+        <input type="email" placeholder="Enter email" formControlName="email" class="form-control">
+      </div>
+
+      <div class="col-lg-12 formgroup">
+        <button class="btn btn-outline-primary mt-3" [disabled]="formgroup.invalid || posting">Save</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
